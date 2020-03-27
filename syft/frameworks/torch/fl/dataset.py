@@ -202,7 +202,7 @@ def dataset_federate(dataset, workers):
     into a sy.FederatedDataset. The dataset given is split in len(workers)
     part and sent to each workers
     """
-    logger.info(f"Scanning and sending data to {', '.join([w.id for w in workers])}...")
+    logger.info(f"Scanning and sending data to {', '.join([str(w.id) for w in workers])}...")
 
     # take ceil to have exactly len(workers) sets after splitting
     data_size = math.ceil(len(dataset) / len(workers))
